@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'category_item.dart';
+import 'dummy_data.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -16,6 +19,14 @@ class HomePage extends StatelessWidget {
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
         ),
+        children: dummyCategories
+            .map(
+              (catData) => CategoryItem(
+                catData.title,
+                catData.color,
+              ),
+            )
+            .toList(),
       ),
     );
   }
