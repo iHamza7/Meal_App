@@ -1,15 +1,17 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/foundation.dart';
 
 enum Complexity {
-  simple,
-  challenging,
-  hard,
+  Simple,
+  Challenging,
+  Hard,
 }
 
 enum Affordability {
-  affordable,
-  pricey,
-  luxurious,
+  Affordable,
+  Pricey,
+  Luxurious,
 }
 
 class Meal {
@@ -23,10 +25,11 @@ class Meal {
   final Complexity complexity;
   final Affordability affordability;
   final bool isGlutenFree;
-  final bool islactoseFree;
+  final bool isLactoseFree;
+  final bool isVegan;
   final bool isVegetarian;
 
-  Meal({
+  const Meal({
     required this.id,
     required this.categories,
     required this.title,
@@ -37,7 +40,8 @@ class Meal {
     required this.complexity,
     required this.affordability,
     required this.isGlutenFree,
-    required this.islactoseFree,
+    required this.isLactoseFree,
+    required this.isVegan,
     required this.isVegetarian,
   });
 }
