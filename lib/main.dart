@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'homepage.dart';
+import 'meals_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
             ),
       ),
       home: const HomePage(),
+      routes: {
+        '/meal-screen': (ctx) => const MealScreen(),
+      },
     );
   }
 }

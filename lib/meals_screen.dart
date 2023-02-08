@@ -5,6 +5,16 @@ class MealScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final routeArgs =
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    final categoryTitle = routeArgs['title'];
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(categoryTitle!),
+      ),
+      body: const Center(
+        child: Text("this"),
+      ),
+    );
   }
 }

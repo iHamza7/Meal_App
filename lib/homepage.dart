@@ -23,6 +23,7 @@ class HomePage extends StatelessWidget {
         children: dummyCategories
             .map(
               (catData) => CategoryItem(
+                catData.id,
                 catData.title,
                 catData.color,
               ),
