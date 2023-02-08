@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MealScreen extends StatelessWidget {
+  static const routeName = '/meals-screen';
   const MealScreen({super.key});
 
   @override
