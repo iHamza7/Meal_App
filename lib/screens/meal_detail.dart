@@ -35,13 +35,22 @@ class MealDetail extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(10),
             ),
-            height: 100,
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
+            height: 150,
             width: 300,
             child: ListView.builder(
               itemBuilder: (context, index) => Card(
                 color: Theme.of(context).primaryColor,
-                child: Text(selectedMeal.ingredients[index]),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 5,
+                    horizontal: 10,
+                  ),
+                  child: Text(selectedMeal.ingredients[index]),
+                ),
               ),
               itemCount: selectedMeal.ingredients.length,
             ),
