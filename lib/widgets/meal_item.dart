@@ -21,7 +21,10 @@ class MealItem extends StatelessWidget {
       required this.id});
 
   void selectmeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetail.routeName);
+    Navigator.of(context).pushNamed(
+      MealDetail.routeName,
+      arguments: id,
+    );
   }
 
   String get complexityTest {
