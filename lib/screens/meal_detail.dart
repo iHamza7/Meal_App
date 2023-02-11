@@ -31,8 +31,12 @@ class MealDetail extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
-          SizedBox(
-            height: 200,
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.grey),
+            ),
+            height: 100,
             width: 300,
             child: ListView.builder(
               itemBuilder: (context, index) => Card(
