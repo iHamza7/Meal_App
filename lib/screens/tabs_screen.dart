@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'favorite_screen.dart';
+import 'homepage.dart';
+
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
 
@@ -28,6 +31,10 @@ class _TabScreenState extends State<TabScreen> {
             ],
           ),
         ),
+        body: const TabBarView(children: [
+          HomePage(),
+          FavoriteScreen(),
+        ]),
       ),
     );
   }
