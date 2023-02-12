@@ -6,13 +6,15 @@ class MealDetail extends StatelessWidget {
   static const routeName = '/meal-detail';
   const MealDetail({super.key});
 
-  Widget buildTextTile(BuildContext context, String text) => Container(
-        margin: const EdgeInsets.symmetric(vertical: 10),
-        child: Text(
-          "ingredents",
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-      );
+  Widget buildTextTile(BuildContext context, String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.titleMedium,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class MealDetail extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          buildTextTile(context, "hey"),
+          buildTextTile(context, "ingredents"),
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
