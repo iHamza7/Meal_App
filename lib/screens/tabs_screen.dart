@@ -13,28 +13,27 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Meals'),
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.category),
-                text: 'Categories',
-              ),
-              Tab(
-                icon: Icon(Icons.bookmark),
-                text: 'Favorites',
-              ),
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Meals'),
+      ),
+      body: null,
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Theme.of(context).primaryColor,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.category,
+            ),
+            label: "catergories",
           ),
-        ),
-        body: const TabBarView(children: [
-          HomePage(),
-          FavoriteScreen(),
-        ]),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite,
+              ),
+              label: "Favorite"),
+        ],
       ),
     );
   }
