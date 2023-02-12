@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'favorite_screen.dart';
-import 'homepage.dart';
-
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
 
@@ -19,7 +16,7 @@ class _TabScreenState extends State<TabScreen> {
       ),
       body: null,
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        // type: BottomNavigationBarType.fixed,
         backgroundColor: Theme.of(context).primaryColor,
         items: const [
           BottomNavigationBarItem(
