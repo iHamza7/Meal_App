@@ -17,7 +17,7 @@ class _TabScreenState extends State<TabScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('hey'),
+          title: const Text('Meals'),
           bottom: const TabBar(
             tabs: [
               Tab(
