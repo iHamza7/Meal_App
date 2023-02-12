@@ -16,6 +16,21 @@ class MealDetail extends StatelessWidget {
     );
   }
 
+  Widget buildContainer(Widget child) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      height: 150,
+      width: 300,
+      child: child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final mealId = ModalRoute.of(context)!.settings.arguments as String;
@@ -35,17 +50,8 @@ class MealDetail extends StatelessWidget {
             ),
           ),
           buildTextTile(context, "ingredents"),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(10),
-            height: 150,
-            width: 300,
-            child: ListView.builder(
+          buildContainer(
+            ListView.builder(
               itemBuilder: (context, index) => Card(
                 color: Theme.of(context).primaryColor,
                 child: Padding(
@@ -57,6 +63,20 @@ class MealDetail extends StatelessWidget {
                 ),
               ),
               itemCount: selectedMeal.ingredients.length,
+            ),
+          ),
+          buildTextTile(context, "Steps"),
+          buildContainer(
+            ListView.builder(
+              itemBuilder: (context, index) => ListTile(
+                leading: CircleAvatar(
+                  child: Text("# ${index + 1}"),
+                ),
+                title: Text(
+                  selectedMeal.steps[index],
+                ),
+              ),
+              itemCount: selectedMeal.steps.length,
             ),
           ),
         ],
