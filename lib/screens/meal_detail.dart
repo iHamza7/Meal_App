@@ -69,13 +69,18 @@ class MealDetail extends StatelessWidget {
             buildTextTile(context, "Steps"),
             buildContainer(
               ListView.builder(
-                itemBuilder: (context, index) => ListTile(
-                  leading: CircleAvatar(
-                    child: Text("# ${index + 1}"),
-                  ),
-                  title: Text(
-                    selectedMeal.steps[index],
-                  ),
+                itemBuilder: (context, index) => Column(
+                  children: [
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Text("# ${index + 1}"),
+                      ),
+                      title: Text(
+                        selectedMeal.steps[index],
+                      ),
+                    ),
+                    const Divider(),
+                  ],
                 ),
                 itemCount: selectedMeal.steps.length,
               ),
