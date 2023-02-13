@@ -5,6 +5,17 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Drawer(
+      child: Column(
+        children: [
+          Container(
+            height: 120,
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.centerLeft,
+          ),
+        ],
+      ),
+    );
   }
 }
