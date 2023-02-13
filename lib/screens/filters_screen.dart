@@ -12,9 +12,9 @@ class FiltersScreen extends StatefulWidget {
 
 class _FiltersScreenState extends State<FiltersScreen> {
   var _glutenFree = false;
-  final _vegetarian = false;
-  final _vegan = false;
-  final _lactoseFree = false;
+  var _vegetarian = false;
+  var _vegan = false;
+  var _lactoseFree = false;
 
   Widget _buildSwitch(String title, String subtitle, var currentvalue,
       final ValueChanged<bool>? changeValue) {
@@ -54,7 +54,37 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       _glutenFree = newValue;
                     });
                   },
-                )
+                ),
+                _buildSwitch(
+                  'Lactose-free',
+                  'lactose-FREE meals',
+                  _lactoseFree,
+                  (newValue) {
+                    setState(() {
+                      _lactoseFree = newValue;
+                    });
+                  },
+                ),
+                _buildSwitch(
+                  'Vegan',
+                  'vegan-FREE meals',
+                  _vegan,
+                  (newValue) {
+                    setState(() {
+                      _vegan = newValue;
+                    });
+                  },
+                ),
+                _buildSwitch(
+                  'Vegetarian',
+                  'Vegetarian-FREE meals',
+                  _vegetarian,
+                  (newValue) {
+                    setState(() {
+                      _vegetarian = newValue;
+                    });
+                  },
+                ),
               ],
             ))
           ],
