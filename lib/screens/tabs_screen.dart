@@ -37,6 +37,9 @@ class _TabScreenState extends State<TabScreen> {
           pages[selectedPageIndex]['title'],
         ),
       ),
+      drawer: const Drawer(
+        child: Text('hey'),
+      ),
       body: pages[selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: selectPage,
