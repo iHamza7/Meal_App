@@ -3,6 +3,23 @@ import 'package:flutter/material.dart';
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
 
+  Widget buildListTile(String title, IconData icon) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        size: 20,
+      ),
+      title: Text(
+        title,
+        style: const TextStyle(
+            fontFamily: 'RobotoCondensed',
+            fontSize: 24,
+            fontWeight: FontWeight.bold),
+      ),
+      onTap: selectedPress,
+    );
+  }
+
   void selectedPress() {}
 
   @override
@@ -25,21 +42,11 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(),
-          ListTile(
-            leading: const Icon(
-              Icons.restaurant,
-              size: 20,
-            ),
-            title: const Text(
-              'Meals',
-              style: TextStyle(
-                  fontFamily: 'RobotoCondensed',
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-            onTap: selectedPress,
-          )
+          const SizedBox(
+            height: 20,
+          ),
+          buildListTile('Meals', Icons.restaurant),
+          buildListTile('Filters', Icons.filter),
         ],
       ),
     );
