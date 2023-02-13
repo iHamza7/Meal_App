@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
 
+  void selectedPress() {}
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -23,6 +25,21 @@ class MainDrawer extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(),
+          ListTile(
+            leading: const Icon(
+              Icons.restaurant,
+              size: 20,
+            ),
+            title: const Text(
+              'Meals',
+              style: TextStyle(
+                  fontFamily: 'RobotoCondensed',
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
+            ),
+            onTap: selectedPress,
+          )
         ],
       ),
     );
