@@ -16,7 +16,7 @@ class FiltersScreen extends StatefulWidget {
 class _FiltersScreenState extends State<FiltersScreen> {
   var _glutenFree = false;
   var _vegetarian = false;
-  var _vegan = true;
+  var _vegan = false;
   var _lactoseFree = false;
 
   @override
