@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   Map<String, bool> _filters = {
     'Gluten': false,
     'Lactose': false,
-    'Vegan': true,
+    'Vegan': false,
     'Vegetarian': false,
   };
   List<Meal> _availableMeals = dummyMeals;
