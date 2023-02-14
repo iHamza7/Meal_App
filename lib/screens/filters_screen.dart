@@ -10,9 +10,6 @@ class FiltersScreen extends StatefulWidget {
   const FiltersScreen(this.currentFilters, this.saveFilters, {super.key});
 
   @override
-  initState() {}
-
-  @override
   State<FiltersScreen> createState() => _FiltersScreenState();
 }
 
@@ -21,6 +18,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
   var _vegetarian = false;
   var _vegan = false;
   var _lactoseFree = false;
+
+  @override
+  initState() {
+    super.initState();
+    _glutenFree = widget.currentFilters['Gluten']!;
+    _glutenFree = widget.currentFilters['Lactose']!;
+    _glutenFree = widget.currentFilters['Vegan']!;
+    _glutenFree = widget.currentFilters['Vegetarian']!;
+  }
 
   Widget _buildSwitch(String title, String subtitle, var currentvalue,
       final ValueChanged<bool>? changeValue) {
