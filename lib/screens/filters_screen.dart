@@ -5,7 +5,7 @@ import '../widgets/main_drawer.dart';
 class FiltersScreen extends StatefulWidget {
   static const routeName = '/filters';
 
-  final VoidCallback? saveFilters;
+  final Function saveFilters;
   const FiltersScreen(this.saveFilters, {super.key});
 
   @override
@@ -35,7 +35,9 @@ class _FiltersScreenState extends State<FiltersScreen> {
           title: const Text("this is filters screen"),
           actions: [
             IconButton(
-              onPressed: widget.saveFilters,
+              onPressed: () {
+                widget.saveFilters();
+              },
               icon: const Icon(Icons.save),
             ),
           ],
