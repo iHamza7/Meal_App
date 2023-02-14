@@ -22,6 +22,8 @@ class _MyAppState extends State<MyApp> {
     'Vegan': false,
     'Vegetarian': false,
   };
+
+  void _setFilters(Map<String, bool> filterData) {}
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
